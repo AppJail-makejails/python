@@ -1,0 +1,31 @@
+%{PYTHON_EXECUTABLE:python%{PYTHON_MAJOR\}.%{PYTHON_MINOR\}}
+%{PYTHON_MAJOR:3}
+%{PYTHON_MINOR:9}
+
+INCLUDE options/options.makejail
+
+VAR --noexpand python_major=%{PYTHON_MAJOR}
+VAR --noexpand python_minor=%{PYTHON_MINOR}
+
+RAW if ! echo "${python_major}" | grep -Eq '^[23]$'; then
+RAW 	echo "MAJOR VALID VERSIONS: 2, 3" >&2
+RAW 	exit 1
+RAW fi
+
+RAW if ! echo "${python_minor}" | grep -Eq '^(7|8|9|10|11)$'; then
+RAW 	echo "MINOR VALID VERSIONS: 7, 8, 9, 10, 11" >&2
+RAW 	exit 1
+RAW fi
+
+RAW if [ ${python_major} -eq 2 ]; then
+RAW 	if [ ${python_minor} -ne 7 ]; then
+RAW 		echo "MINOR VALID VERSION FOR 2: 7" >&2
+RAW 		exit 1
+RAW 	fi
+RAW fi
+
+PKG python${python_major}${python_minor}
+
+STAGE cmd
+
+CMD %{PYTHON_EXECUTABLE}
