@@ -19,8 +19,6 @@ COPY app/
 
 STAGE cmd
 
-CLEAR stage
-
 WORKDIR /app
 ENTRYPOINT %{PYTHON_EXECUTABLE}
 RUN main.py
@@ -43,6 +41,12 @@ appjail makejail -j pyapp -- --network development
 
 # or (if you need to use Python 2):
 appjail makejail -j pyapp -b PYTHON_MAJOR=2 -b PYTHON_MINOR=7 -- --network development
+```
+
+You can open a python shell using the `python_shell` custom stage:
+
+```sh
+appjail run -s python_shell pyapp
 ```
 
 ### Build Arguments

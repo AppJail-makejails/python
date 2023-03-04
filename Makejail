@@ -26,6 +26,6 @@ RAW fi
 
 PKG python${python_major}${python_minor}
 
-STAGE cmd
+STAGE custom:python_shell
 
 CMD %{PYTHON_EXECUTABLE}
