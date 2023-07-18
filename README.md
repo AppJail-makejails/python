@@ -57,9 +57,6 @@ Make any changes you want to your image.
 ```
 INCLUDE options/network.makejail
 INCLUDE gh+AppJail-makejails/python --file build.makejail
-
-SYSRC python_enable=YES
-SERVICE python start
 ```
 
 Build the jail:
