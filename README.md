@@ -11,24 +11,28 @@ wikipedia.org/wiki/Python_(programming\_language)
 Create a `Makejail` in your Python app project.
 
 ```
+OPTION start
+OPTION overwrite
+
 INCLUDE options/network.makejail
-INCLUDE gh+AppJail-makejails/python
+
+FROM --entrypoint gh+AppJail-makejails/python python:13.2
 
 WORKDIR /app
-COPY app/
+COPY .
 
 STAGE cmd
 
-WORKDIR /app
-ENTRYPOINT %{PYTHON_EXECUTABLE}
-RUN main.py
+CMD cd /app; python main.py
 ```
+
+**Note**: Remember that you can use `INCLUDE gh+AppJail-makejails/python` instead of `FROM --entrypoint gh+AppJail-makejails/python python:...` to use build arguments, but when using a specific version of python, you need to change the entry point when running a python script.
 
 Where `options/network.makejail` are the options that suit your environment, for example:
 
 ```
 ARG network?
-ARG interface=python
+ARG interface=pyapp
 
 OPTION virtualnet=${network}:${interface} default
 OPTION nat
@@ -38,15 +42,6 @@ Open a shell and run `appjail makejail`:
 
 ```sh
 appjail makejail -j pyapp
-
-# or (if you need to use Python 2):
-appjail makejail -j pyapp -b PYTHON_MAJOR=2 -b PYTHON_MINOR=7
-```
-
-You can open a python shell using the `python_shell` custom stage:
-
-```sh
-appjail run -s python_shell pyapp
 ```
 
 ### Build Arguments
