@@ -16,7 +16,7 @@ OPTION overwrite
 
 INCLUDE options/network.makejail
 
-FROM --entrypoint gh+AppJail-makejails/python python:13.2
+FROM python:13.2
 
 WORKDIR /app
 COPY .
@@ -26,7 +26,7 @@ STAGE cmd
 CMD cd /app; python main.py
 ```
 
-**Note**: Remember that you can use `INCLUDE gh+AppJail-makejails/python` instead of `FROM --entrypoint gh+AppJail-makejails/python python:...` to use build arguments, but when using a specific version of python, you need to change the entry point when running a python script.
+**Note**: Remember that you can use `INCLUDE gh+AppJail-makejails/python` instead of `FROM python:...` to use build arguments, but when using a specific version of python, you need to change the entry point when running a python script.
 
 Where `options/network.makejail` are the options that suit your environment, for example:
 
