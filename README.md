@@ -44,11 +44,9 @@ Open a shell and run `appjail makejail`:
 appjail makejail -j pyapp
 ```
 
-### Build Arguments
+### Arguments
 
-* `PYTHON_MAJOR` (default: `3`).
-* `PYTHON_MINOR` (optional).
-* `PYTHON_TAG_PREFIX` (default: `13.2-`).
+* `python_tag` (default: `13.2`): see [#tags](#tags).
 
 ## How to build the Images
 

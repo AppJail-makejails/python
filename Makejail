@@ -1,7 +1,5 @@
-%{PYTHON_MAJOR:3}
-%{PYTHON_MINOR:}
-%{PYTHON_TAG_PREFIX:13.2-}
-
 INCLUDE options/options.makejail
 
-FROM --entrypoint gh+AppJail-makejails/python python:%{PYTHON_TAG_PREFIX}%{PYTHON_MAJOR}%{PYTHON_MINOR}
+ARG python_tag=13.2
+
+FROM --entrypoint gh+AppJail-makejails/python python:${python_tag}
