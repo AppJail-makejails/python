@@ -103,8 +103,8 @@ tags+: 13.2-3
 13.2-3.timestamp.amd64: 1689699114
 13.2-3.sum.amd64: 8b861a6da84aee5dd3daedc4218834cdfab758d42123fc3214027748f4599ac2
 13.2-3.size.amd64: 38883584
-13.2-3.source.amd64: https://dtxdf.duckdns.org/
-13.2-3.source.amd64+: https://anonget.onrender.com/
+13.2-3.source.amd64: https://dtxdf.duckdns.org/hfg4S02fzc/python_13_2_3_amd64_image_appjail
+13.2-3.source.amd64+: https://anonget.onrender.com/hfg4S02fzc/python_13_2_3_amd64_image_appjail
 
 tags+: 13.2-310
 13.2-310.arch: amd64
