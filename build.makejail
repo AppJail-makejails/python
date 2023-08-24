@@ -6,7 +6,7 @@ ARG python_minor?
 RAW if [ -n "${python_major}" ]; then
 RAW 	if [ "${python_major}" = 3 ]; then
 RAW 		if [ -n "${python_minor}" ] && ! echo "${python_minor}" | grep -Eq '^(8|9|10|11)$'; then
-RAW 			echo "MINOR VALID VERSIONS for 3: 8, 8, 10, 11" >&2
+RAW 			echo "MINOR VALID VERSIONS for 3: 8, 9, 10, 11" >&2
 RAW 			exit 1
 RAW 		fi
 RAW 	elif [ "${python_major}" = 2 ]; then
