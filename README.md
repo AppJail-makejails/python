@@ -83,11 +83,11 @@ appjail image export python
 
 | Tag        | Arch    | Version           | Type   | `python_major` | `python_minor` |
 | ---------- | ------- | ----------------- | ------ | -------------- | -------------- |
-| `13.2`     | `amd64` | `13.2-RELEASE-p4` | `thin` |       -        |        -       |
-| `13.2-3`   | `amd64` | `13.2-RELEASE-p4` | `thin` |       3        |        -       |
-| `13.2-311` | `amd64` | `13.2-RELEASE-p4` | `thin` |       3        |        11      |
-| `13.2-310` | `amd64` | `13.2-RELEASE-p4` | `thin` |       3        |        10      |
-| `13.2-39`  | `amd64` | `13.2-RELEASE-p4` | `thin` |       3        |        9       |
-| `13.2-38`  | `amd64` | `13.2-RELEASE-p4` | `thin` |       3        |        8       |
-| `13.2-2`   | `amd64` | `13.2-RELEASE-p4` | `thin` |       2        |        -       |
-| `13.2-27`  | `amd64` | `13.2-RELEASE-p4` | `thin` |       2        |        7       |
+| `13.2`     | `amd64` | `13.2-RELEASE` | `thin` |       -        |        -       |
+| `13.2-3`   | `amd64` | `13.2-RELEASE` | `thin` |       3        |        -       |
+| `13.2-311` | `amd64` | `13.2-RELEASE` | `thin` |       3        |        11      |
+| `13.2-310` | `amd64` | `13.2-RELEASE` | `thin` |       3        |        10      |
+| `13.2-39`  | `amd64` | `13.2-RELEASE` | `thin` |       3        |        9       |
+| `13.2-38`  | `amd64` | `13.2-RELEASE` | `thin` |       3        |        8       |
+| `13.2-2`   | `amd64` | `13.2-RELEASE` | `thin` |       2        |        -       |
+| `13.2-27`  | `amd64` | `13.2-RELEASE` | `thin` |       2        |        7       |
