@@ -91,3 +91,11 @@ appjail image export python
 | `13.2-38`  | `amd64` | `13.2-RELEASE` | `thin` |     `3`        |      `8`       |
 | `13.2-2`   | `amd64` | `13.2-RELEASE` | `thin` |     `2`        |       -        |
 | `13.2-27`  | `amd64` | `13.2-RELEASE` | `thin` |     `2`        |      `7`       |
+| `14.0`     | `amd64` | `14.0-RELEASE` | `thin` |      -         |       -        |
+| `14.0-3`   | `amd64` | `14.0-RELEASE` | `thin` |     `3`        |       -        |
+| `14.0-311` | `amd64` | `14.0-RELEASE` | `thin` |     `3`        |      `11`      |
+| `14.0-310` | `amd64` | `14.0-RELEASE` | `thin` |     `3`        |      `10`      |
+| `14.0-39`  | `amd64` | `14.0-RELEASE` | `thin` |     `3`        |      `9`       |
+| `14.0-38`  | `amd64` | `14.0-RELEASE` | `thin` |     `3`        |      `8`       |
+| `14.0-2`   | `amd64` | `14.0-RELEASE` | `thin` |     `2`        |       -        |
+| `14.0-27`  | `amd64` | `14.0-RELEASE` | `thin` |     `2`        |      `7`       |
