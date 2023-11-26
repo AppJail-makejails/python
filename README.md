@@ -48,37 +48,6 @@ appjail makejail -j pyapp
 
 * `python_tag` (default: `13.2`): see [#tags](#tags).
 
-## How to build the Images
-
-Make any changes you want to your image.
-
-```
-INCLUDE options/network.makejail
-INCLUDE gh+AppJail-makejails/python --file build.makejail
-```
-
-Build the jail:
-
-```sh
-appjail makejail -j python
-```
-
-Remove unportable or unnecessary files and directories and export the jail:
-
-```sh
-appjail stop python
-appjail cmd local python sh -c "rm -f var/log/*"
-appjail cmd local python sh -c "rm -f var/cache/pkg/*"
-appjail cmd local python sh -c "rm -f var/run/*"
-appjail cmd local python vi etc/rc.conf
-appjail image export python
-```
-
-### Arguments
-
-* `python_major` (optional).
-* `python_minor` (optional).
-
 ## Tags
 
 | Tag        | Arch    | Version        | Type   | `python_major` | `python_minor` |
