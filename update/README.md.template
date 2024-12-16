@@ -16,7 +16,7 @@ OPTION overwrite
 
 INCLUDE options/network.makejail
 
-FROM python:13.4
+FROM python:%%TAG1%%
 
 WORKDIR /app
 COPY .
@@ -46,26 +46,26 @@ appjail makejail -j pyapp
 
 ### Arguments
 
-* `python_tag` (default: `13.4`): see [#tags](#tags).
+* `python_tag` (default: `%%TAG1%%`): see [#tags](#tags).
 * `python_ajspec` (default: `gh+AppJail-makejails/python`): Entry point where the `appjail-ajspec(5)` file is located.
 
 ## Tags
 
 | Tag        | Arch    | Version        | Type   | `python_major` | `python_minor` |
 | ---------- | ------- | -------------- | ------ | -------------- | -------------- |
-| `13.4`     | `amd64` | `13.4-RELEASE` | `thin` |      -         |       -        |
-| `13.4-3`   | `amd64` | `13.4-RELEASE` | `thin` |     `3`        |       -        |
-| `13.4-311` | `amd64` | `13.4-RELEASE` | `thin` |     `3`        |      `11`      |
-| `13.4-310` | `amd64` | `13.4-RELEASE` | `thin` |     `3`        |      `10`      |
-| `13.4-39`  | `amd64` | `13.4-RELEASE` | `thin` |     `3`        |      `9`       |
-| `13.4-38`  | `amd64` | `13.4-RELEASE` | `thin` |     `3`        |      `8`       |
-| `13.4-2`   | `amd64` | `13.4-RELEASE` | `thin` |     `2`        |       -        |
-| `13.4-27`  | `amd64` | `13.4-RELEASE` | `thin` |     `2`        |      `7`       |
-| `14.2`     | `amd64` | `14.2-RELEASE` | `thin` |      -         |       -        |
-| `14.2-3`   | `amd64` | `14.2-RELEASE` | `thin` |     `3`        |       -        |
-| `14.2-311` | `amd64` | `14.2-RELEASE` | `thin` |     `3`        |      `11`      |
-| `14.2-310` | `amd64` | `14.2-RELEASE` | `thin` |     `3`        |      `10`      |
-| `14.2-39`  | `amd64` | `14.2-RELEASE` | `thin` |     `3`        |      `9`       |
-| `14.2-38`  | `amd64` | `14.2-RELEASE` | `thin` |     `3`        |      `8`       |
-| `14.2-2`   | `amd64` | `14.2-RELEASE` | `thin` |     `2`        |       -        |
-| `14.2-27`  | `amd64` | `14.2-RELEASE` | `thin` |     `2`        |      `7`       |
+| `%%TAG1%%`     | `amd64` | `%%TAG1%%-RELEASE` | `thin` |      -         |       -        |
+| `%%TAG1%%-3`   | `amd64` | `%%TAG1%%-RELEASE` | `thin` |     `3`        |       -        |
+| `%%TAG1%%-311` | `amd64` | `%%TAG1%%-RELEASE` | `thin` |     `3`        |      `11`      |
+| `%%TAG1%%-310` | `amd64` | `%%TAG1%%-RELEASE` | `thin` |     `3`        |      `10`      |
+| `%%TAG1%%-39`  | `amd64` | `%%TAG1%%-RELEASE` | `thin` |     `3`        |      `9`       |
+| `%%TAG1%%-38`  | `amd64` | `%%TAG1%%-RELEASE` | `thin` |     `3`        |      `8`       |
+| `%%TAG1%%-2`   | `amd64` | `%%TAG1%%-RELEASE` | `thin` |     `2`        |       -        |
+| `%%TAG1%%-27`  | `amd64` | `%%TAG1%%-RELEASE` | `thin` |     `2`        |      `7`       |
+| `%%TAG2%%`     | `amd64` | `%%TAG2%%-RELEASE` | `thin` |      -         |       -        |
+| `%%TAG2%%-3`   | `amd64` | `%%TAG2%%-RELEASE` | `thin` |     `3`        |       -        |
+| `%%TAG2%%-311` | `amd64` | `%%TAG2%%-RELEASE` | `thin` |     `3`        |      `11`      |
+| `%%TAG2%%-310` | `amd64` | `%%TAG2%%-RELEASE` | `thin` |     `3`        |      `10`      |
+| `%%TAG2%%-39`  | `amd64` | `%%TAG2%%-RELEASE` | `thin` |     `3`        |      `9`       |
+| `%%TAG2%%-38`  | `amd64` | `%%TAG2%%-RELEASE` | `thin` |     `3`        |      `8`       |
+| `%%TAG2%%-2`   | `amd64` | `%%TAG2%%-RELEASE` | `thin` |     `2`        |       -        |
+| `%%TAG2%%-27`  | `amd64` | `%%TAG2%%-RELEASE` | `thin` |     `2`        |      `7`       |

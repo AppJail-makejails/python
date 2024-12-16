@@ -1,6 +1,6 @@
 INCLUDE options/options.makejail
 
-ARG python_tag=13.4
+ARG python_tag=%%TAG1%%
 ARG python_ajspec=gh+AppJail-makejails/python
 
 FROM --entrypoint "${python_ajspec}" python:${python_tag}
