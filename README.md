@@ -16,7 +16,7 @@ OPTION overwrite
 
 INCLUDE options/network.makejail
 
-FROM python:13.4
+FROM python:13.5
 
 WORKDIR /app
 COPY .
@@ -46,21 +46,21 @@ appjail makejail -j pyapp
 
 ### Arguments
 
-* `python_tag` (default: `13.4`): see [#tags](#tags).
+* `python_tag` (default: `13.5`): see [#tags](#tags).
 * `python_ajspec` (default: `gh+AppJail-makejails/python`): Entry point where the `appjail-ajspec(5)` file is located.
 
 ## Tags
 
 | Tag        | Arch    | Version        | Type   | `python_major` | `python_minor` |
 | ---------- | ------- | -------------- | ------ | -------------- | -------------- |
-| `13.4`     | `amd64` | `13.4-RELEASE` | `thin` |      -         |       -        |
-| `13.4-3`   | `amd64` | `13.4-RELEASE` | `thin` |     `3`        |       -        |
-| `13.4-311` | `amd64` | `13.4-RELEASE` | `thin` |     `3`        |      `11`      |
-| `13.4-310` | `amd64` | `13.4-RELEASE` | `thin` |     `3`        |      `10`      |
-| `13.4-39`  | `amd64` | `13.4-RELEASE` | `thin` |     `3`        |      `9`       |
-| `13.4-38`  | `amd64` | `13.4-RELEASE` | `thin` |     `3`        |      `8`       |
-| `13.4-2`   | `amd64` | `13.4-RELEASE` | `thin` |     `2`        |       -        |
-| `13.4-27`  | `amd64` | `13.4-RELEASE` | `thin` |     `2`        |      `7`       |
+| `13.5`     | `amd64` | `13.5-RELEASE` | `thin` |      -         |       -        |
+| `13.5-3`   | `amd64` | `13.5-RELEASE` | `thin` |     `3`        |       -        |
+| `13.5-311` | `amd64` | `13.5-RELEASE` | `thin` |     `3`        |      `11`      |
+| `13.5-310` | `amd64` | `13.5-RELEASE` | `thin` |     `3`        |      `10`      |
+| `13.5-39`  | `amd64` | `13.5-RELEASE` | `thin` |     `3`        |      `9`       |
+| `13.5-38`  | `amd64` | `13.5-RELEASE` | `thin` |     `3`        |      `8`       |
+| `13.5-2`   | `amd64` | `13.5-RELEASE` | `thin` |     `2`        |       -        |
+| `13.5-27`  | `amd64` | `13.5-RELEASE` | `thin` |     `2`        |      `7`       |
 | `14.2`     | `amd64` | `14.2-RELEASE` | `thin` |      -         |       -        |
 | `14.2-3`   | `amd64` | `14.2-RELEASE` | `thin` |     `3`        |       -        |
 | `14.2-311` | `amd64` | `14.2-RELEASE` | `thin` |     `3`        |      `11`      |
