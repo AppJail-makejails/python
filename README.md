@@ -16,7 +16,7 @@ OPTION overwrite
 
 INCLUDE options/network.makejail
 
-FROM python:13.5
+FROM python:14.3
 
 WORKDIR /app
 COPY .
@@ -46,23 +46,13 @@ appjail makejail -j pyapp
 
 ### Arguments
 
-* `python_tag` (default: `13.5`): see [#tags](#tags).
+* `python_tag` (default: `14.3`): see [#tags](#tags).
 * `python_ajspec` (default: `gh+AppJail-makejails/python`): Entry point where the `appjail-ajspec(5)` file is located.
 
 ## Tags
 
 | Tag                                  | Arch    | Version            | Type   | `python_major`    | `python_minor` |
 | ------------------------------------ | ------- | ------------------ | ------ | ----------------- | -------------- |
-| `13.5`                           | `amd64` | `13.5-RELEASE` | `thin` | -                 | -              |
-| `13.5-3`           | `amd64` | `13.5-RELEASE` | `thin` | `3` | -              |
-| `13.5-314` | `amd64` | `13.5-RELEASE` | `thin` | `3` | `14`   |
-| `13.5-313t` | `amd64` | `13.5-RELEASE` | `thin` | `3` | `13t`   |
-| `13.5-313` | `amd64` | `13.5-RELEASE` | `thin` | `3` | `13`   |
-| `13.5-312` | `amd64` | `13.5-RELEASE` | `thin` | `3` | `13t`   |
-| `13.5-311` | `amd64` | `13.5-RELEASE` | `thin` | `3` | `11`   |
-| `13.5-310` | `amd64` | `13.5-RELEASE` | `thin` | `3` | `10`   |
-| `13.5-2`                         | `amd64` | `13.5-RELEASE` | `thin` | `2`               | -              |
-| `13.5-27`                        | `amd64` | `13.5-RELEASE` | `thin` | `2`               | `7`            |
 | `14.3`                           | `amd64` | `14.3-RELEASE` | `thin` | -                 | -              |
 | `14.3-3`           | `amd64` | `14.3-RELEASE` | `thin` | `3` | -              |
 | `14.3-314` | `amd64` | `14.3-RELEASE` | `thin` | `3` | `14`   |
@@ -73,3 +63,13 @@ appjail makejail -j pyapp
 | `14.3-310` | `amd64` | `14.3-RELEASE` | `thin` | `3` | `10`   |
 | `14.3-2`                         | `amd64` | `14.3-RELEASE` | `thin` | `2`               | -              |
 | `14.3-27`                        | `amd64` | `14.3-RELEASE` | `thin` | `2`               | `7`            |
+| `15`                           | `amd64` | `15` | `thin` | -                 | -              |
+| `15-3`           | `amd64` | `15` | `thin` | `3` | -              |
+| `15-314` | `amd64` | `15` | `thin` | `3` | `14`   |
+| `15-313t` | `amd64` | `15` | `thin` | `3` | `13t`   |
+| `15-313` | `amd64` | `15` | `thin` | `3` | `13`   |
+| `15-312` | `amd64` | `15` | `thin` | `3` | `13t`   |
+| `15-311` | `amd64` | `15` | `thin` | `3` | `11`   |
+| `15-310` | `amd64` | `15` | `thin` | `3` | `10`   |
+| `15-2`                         | `amd64` | `15` | `thin` | `2`               | -              |
+| `15-27`                        | `amd64` | `15` | `thin` | `2`               | `7`            |
