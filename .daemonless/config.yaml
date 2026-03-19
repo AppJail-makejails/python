@@ -1,0 +1,53 @@
+build:
+  variants:
+    - tag: 15.0
+      containerfile: Containerfile.pkg
+      aliases: ["latest"]
+      default: true
+      args:
+        FREEBSD_RELEASE: "15.0"
+    - tag: 15.0-3
+      containerfile: Containerfile.pkg
+      args:
+        FREEBSD_RELEASE: "15.0"
+        PYTHON_VERSION: "3"
+    - tag: 15.0-2
+      containerfile: Containerfile.pkg
+      args:
+        FREEBSD_RELEASE: "15.0"
+        PYTHON_VERSION: "2"
+    - tag: 15.0-27
+      containerfile: Containerfile.pkg
+      args:
+        FREEBSD_RELEASE: "15.0"
+        PYTHON_VERSION: "27"
+    - tag: 15.0-310
+      containerfile: Containerfile.pkg
+      args:
+        FREEBSD_RELEASE: "15.0"
+        PYTHON_VERSION: "310"
+    - tag: 15.0-311
+      containerfile: Containerfile.pkg
+      args:
+        FREEBSD_RELEASE: "15.0"
+        PYTHON_VERSION: "311"
+    - tag: 15.0-312
+      containerfile: Containerfile.pkg
+      args:
+        FREEBSD_RELEASE: "15.0"
+        PYTHON_VERSION: "312"
+    - tag: 15.0-313
+      containerfile: Containerfile.pkg
+      args:
+        FREEBSD_RELEASE: "15.0"
+        PYTHON_VERSION: "313"
+    - tag: 15.0-313t
+      containerfile: Containerfile.pkg
+      args:
+        FREEBSD_RELEASE: "15.0"
+        PYTHON_VERSION: "313t"
+    - tag: 15.0-314
+      containerfile: Containerfile.pkg
+      args:
+        FREEBSD_RELEASE: "15.0"
+        PYTHON_VERSION: "314"

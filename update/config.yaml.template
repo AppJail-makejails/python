@@ -1,0 +1,53 @@
+build:
+  variants:
+    - tag: %%TAG1%%
+      containerfile: Containerfile.pkg
+      aliases: ["latest"]
+      default: true
+      args:
+        FREEBSD_RELEASE: "%%TAG1%%"
+    - tag: %%TAG1%%-3
+      containerfile: Containerfile.pkg
+      args:
+        FREEBSD_RELEASE: "%%TAG1%%"
+        PYTHON_VERSION: "3"
+    - tag: %%TAG1%%-2
+      containerfile: Containerfile.pkg
+      args:
+        FREEBSD_RELEASE: "%%TAG1%%"
+        PYTHON_VERSION: "2"
+    - tag: %%TAG1%%-27
+      containerfile: Containerfile.pkg
+      args:
+        FREEBSD_RELEASE: "%%TAG1%%"
+        PYTHON_VERSION: "27"
+    - tag: %%TAG1%%-310
+      containerfile: Containerfile.pkg
+      args:
+        FREEBSD_RELEASE: "%%TAG1%%"
+        PYTHON_VERSION: "310"
+    - tag: %%TAG1%%-311
+      containerfile: Containerfile.pkg
+      args:
+        FREEBSD_RELEASE: "%%TAG1%%"
+        PYTHON_VERSION: "311"
+    - tag: %%TAG1%%-312
+      containerfile: Containerfile.pkg
+      args:
+        FREEBSD_RELEASE: "%%TAG1%%"
+        PYTHON_VERSION: "312"
+    - tag: %%TAG1%%-313
+      containerfile: Containerfile.pkg
+      args:
+        FREEBSD_RELEASE: "%%TAG1%%"
+        PYTHON_VERSION: "313"
+    - tag: %%TAG1%%-313t
+      containerfile: Containerfile.pkg
+      args:
+        FREEBSD_RELEASE: "%%TAG1%%"
+        PYTHON_VERSION: "313t"
+    - tag: %%TAG1%%-314
+      containerfile: Containerfile.pkg
+      args:
+        FREEBSD_RELEASE: "%%TAG1%%"
+        PYTHON_VERSION: "314"

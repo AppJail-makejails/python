@@ -2,74 +2,28 @@
 
 Python is an interpreted, interactive, object-oriented, open-source programming language. It incorporates modules, exceptions, dynamic typing, very high level dynamic data types, and classes. Python combines remarkable power with very clear syntax. It has interfaces to many system calls and libraries, as well as to various window systems, and is extensible in C or C++. It is also usable as an extension language for applications that need a programmable interface. Finally, Python is portable: it runs on many Unix variants, on the Mac, and on Windows 2000 and later.
 
-wikipedia.org/wiki/Python_(programming\_language)
+wikipedia.org/wiki/Python_(programming_language)
 
-![python logo](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/121px-Python-logo-notext.svg.png)
+![python logo](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/960px-Python-logo-notext.svg.png)
 
 ## How to use this Makejail
 
-Create a `Makejail` in your Python app project.
-
-```
-OPTION start
-OPTION overwrite
-
-INCLUDE options/network.makejail
-
-FROM python:%%TAG1%%
-
-WORKDIR /app
-COPY .
-
-STAGE cmd
-
-CMD cd /app; python main.py
-```
-
-**Note**: Remember that you can use `INCLUDE gh+AppJail-makejails/python` instead of `FROM python:...` to use arguments, but when using a specific version of python, you need to change the entry point when running a python script.
-
-Where `options/network.makejail` are the options that suit your environment, for example:
-
-```
-ARG network?
-ARG interface=pyapp
-
-OPTION virtualnet=${network}:${interface} default
-OPTION nat
-```
-
-Open a shell and run `appjail makejail`:
-
-```sh
-appjail makejail -j pyapp
+```console
+# appjail makejail -j python -f gh+AppJail-makejails/python
+...
+# appjail cmd jexec python python
+Python 3.11.15 (main, Mar  4 2026, 23:52:19) [Clang 19.1.7 (https://github.com/llvm/llvm-project.git llvmorg-19.1.7-0-gcd7080 on freebsd15
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
 ```
 
 ### Arguments
 
-* `python_tag` (default: `%%TAG1%%`): see [#tags](#tags).
-* `python_ajspec` (default: `gh+AppJail-makejails/python`): Entry point where the `appjail-ajspec(5)` file is located.
+* `python_from` (default: `ghcr.io/appjail-makejails/%%IMAGE_NAME%%`): Location of OCI image. See also [OCI Configuration](#oci-configuration).
+* `python_tag` (default: `latest`): OCI image tag. See also [OCI Configuration](#oci-configuration).
 
-## Tags
+## OCI Configuration
 
-| Tag                                  | Arch    | Version            | Type   | `python_major`    | `python_minor` |
-| ------------------------------------ | ------- | ------------------ | ------ | ----------------- | -------------- |
-| `%%TAG1%%`                           | `amd64` | `%%TAG1%%-RELEASE` | `thin` | -                 | -              |
-| `%%TAG1%%-%%PYVER_MAJOR%%`           | `amd64` | `%%TAG1%%-RELEASE` | `thin` | `%%PYVER_MAJOR%%` | -              |
-| `%%TAG1%%-%%PYVER_MAJOR%%%%PYVER6%%` | `amd64` | `%%TAG1%%-RELEASE` | `thin` | `%%PYVER_MAJOR%%` | `%%PYVER6%%`   |
-| `%%TAG1%%-%%PYVER_MAJOR%%%%PYVER5%%` | `amd64` | `%%TAG1%%-RELEASE` | `thin` | `%%PYVER_MAJOR%%` | `%%PYVER5%%`   |
-| `%%TAG1%%-%%PYVER_MAJOR%%%%PYVER4%%` | `amd64` | `%%TAG1%%-RELEASE` | `thin` | `%%PYVER_MAJOR%%` | `%%PYVER4%%`   |
-| `%%TAG1%%-%%PYVER_MAJOR%%%%PYVER3%%` | `amd64` | `%%TAG1%%-RELEASE` | `thin` | `%%PYVER_MAJOR%%` | `%%PYVER5%%`   |
-| `%%TAG1%%-%%PYVER_MAJOR%%%%PYVER2%%` | `amd64` | `%%TAG1%%-RELEASE` | `thin` | `%%PYVER_MAJOR%%` | `%%PYVER2%%`   |
-| `%%TAG1%%-%%PYVER_MAJOR%%%%PYVER1%%` | `amd64` | `%%TAG1%%-RELEASE` | `thin` | `%%PYVER_MAJOR%%` | `%%PYVER1%%`   |
-| `%%TAG1%%-2`                         | `amd64` | `%%TAG1%%-RELEASE` | `thin` | `2`               | -              |
-| `%%TAG1%%-27`                        | `amd64` | `%%TAG1%%-RELEASE` | `thin` | `2`               | `7`            |
-| `%%TAG2%%`                           | `amd64` | `%%TAG2%%` | `thin` | -                 | -              |
-| `%%TAG2%%-%%PYVER_MAJOR%%`           | `amd64` | `%%TAG2%%` | `thin` | `%%PYVER_MAJOR%%` | -              |
-| `%%TAG2%%-%%PYVER_MAJOR%%%%PYVER6%%` | `amd64` | `%%TAG2%%` | `thin` | `%%PYVER_MAJOR%%` | `%%PYVER6%%`   |
-| `%%TAG2%%-%%PYVER_MAJOR%%%%PYVER5%%` | `amd64` | `%%TAG2%%` | `thin` | `%%PYVER_MAJOR%%` | `%%PYVER5%%`   |
-| `%%TAG2%%-%%PYVER_MAJOR%%%%PYVER4%%` | `amd64` | `%%TAG2%%` | `thin` | `%%PYVER_MAJOR%%` | `%%PYVER4%%`   |
-| `%%TAG2%%-%%PYVER_MAJOR%%%%PYVER3%%` | `amd64` | `%%TAG2%%` | `thin` | `%%PYVER_MAJOR%%` | `%%PYVER5%%`   |
-| `%%TAG2%%-%%PYVER_MAJOR%%%%PYVER2%%` | `amd64` | `%%TAG2%%` | `thin` | `%%PYVER_MAJOR%%` | `%%PYVER2%%`   |
-| `%%TAG2%%-%%PYVER_MAJOR%%%%PYVER1%%` | `amd64` | `%%TAG2%%` | `thin` | `%%PYVER_MAJOR%%` | `%%PYVER1%%`   |
-| `%%TAG2%%-2`                         | `amd64` | `%%TAG2%%` | `thin` | `2`               | -              |
-| `%%TAG2%%-27`                        | `amd64` | `%%TAG2%%` | `thin` | `2`               | `7`            |
+```yaml
+%%OCI_CONFIGURATION%%
+```

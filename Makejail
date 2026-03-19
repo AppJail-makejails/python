@@ -1,6 +1,6 @@
-INCLUDE options/options.makejail
+ARG python_from=ghcr.io/appjail-makejails/python
+ARG python_tag=latest
 
-ARG python_tag=14.3
-ARG python_ajspec=gh+AppJail-makejails/python
-
-FROM --entrypoint "${python_ajspec}" python:${python_tag}
+OPTION start
+OPTION overwrite=force
+OPTION from=${python_from}:${python_tag}
