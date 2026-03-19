@@ -27,7 +27,3 @@ mkdir -p -- "${BASEDIR}/../.github/workflows"
 cat -- "${BASEDIR}/build.yaml.template" |\
     sed -E \
         -e "s/%%IMAGE_NAME%%/${IMAGE_NAME}/g" > "${BASEDIR}/../.github/workflows/build.yaml"
-
-cat -- "${BASEDIR}/Containerfile.pkg.template" |\
-    sed -E \
-        -e "s/%%PYVER%%/${PYVER}/g" > "${BASEDIR}/../Containerfile.pkg"
