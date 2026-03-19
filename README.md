@@ -4,7 +4,7 @@ Python is an interpreted, interactive, object-oriented, open-source programming 
 
 wikipedia.org/wiki/Python_(programming_language)
 
-![python logo](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/960px-Python-logo-notext.svg.png)
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/960px-Python-logo-notext.svg.png" width="80%" height="auto" alt="python logo">
 
 ## How to use this Makejail
 
