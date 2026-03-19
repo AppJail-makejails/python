@@ -9,7 +9,7 @@ wikipedia.org/wiki/Python_(programming_language)
 ## How to use this Makejail
 
 ```console
-# appjail makejail -j python -f gh+AppJail-makejails/python
+# appjail makejail -j python -f gh+AppJail-makejails/python -o container="args:--pull"
 ...
 # appjail cmd jexec python python
 Python 3.11.15 (main, Mar  4 2026, 23:52:19) [Clang 19.1.7 (https://github.com/llvm/llvm-project.git llvmorg-19.1.7-0-gcd7080 on freebsd15
