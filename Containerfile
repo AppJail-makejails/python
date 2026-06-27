@@ -2,7 +2,7 @@ ARG FREEBSD_RELEASE
 
 FROM ghcr.io/appjail-makejails/base:${FREEBSD_RELEASE}
 
-ARG PYTHON_VERSION
+ARG PYVER
 
 LABEL org.opencontainers.image.title="Python" \
     org.opencontainers.image.description="Python is an interpreted, interactive, object-oriented, open-source programming language" \
@@ -12,6 +12,6 @@ LABEL org.opencontainers.image.title="Python" \
     org.opencontainers.image.authors="Jesús Daniel Colmenares Oviedo <dtxdf@disroot.org>"
 
 RUN pkg update && \
-    pkg install python${PYTHON_VERSION} && \
+    pkg install python${PYVER} && \
     pkg clean -a && \
     rm -rf /var/cache/pkg/* /var/db/pkg/repos/*

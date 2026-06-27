@@ -1,53 +1,63 @@
 build:
   variants:
-    - tag: 15.0
-      containerfile: Containerfile.pkg
+    - tag: 15.1
+      containerfile: Containerfile
       aliases: ["latest"]
       default: true
       args:
-        FREEBSD_RELEASE: "15.0"
-    - tag: 15.0-3
-      containerfile: Containerfile.pkg
+        FREEBSD_RELEASE: "15.1"
+    - tag: 15.1-3
+      containerfile: Containerfile
       args:
-        FREEBSD_RELEASE: "15.0"
-        PYTHON_VERSION: "3"
-    - tag: 15.0-2
-      containerfile: Containerfile.pkg
+        FREEBSD_RELEASE: "15.1"
+        PYVER: "3"
+    - tag: 15.1-2
+      containerfile: Containerfile
       args:
-        FREEBSD_RELEASE: "15.0"
-        PYTHON_VERSION: "2"
-    - tag: 15.0-27
-      containerfile: Containerfile.pkg
+        FREEBSD_RELEASE: "15.1"
+        PYVER: "2"
+    - tag: 15.1-27
+      containerfile: Containerfile
       args:
-        FREEBSD_RELEASE: "15.0"
-        PYTHON_VERSION: "27"
-    - tag: 15.0-310
-      containerfile: Containerfile.pkg
+        FREEBSD_RELEASE: "15.1"
+        PYVER: "27"
+    - tag: 15.1-310
+      containerfile: Containerfile
       args:
-        FREEBSD_RELEASE: "15.0"
-        PYTHON_VERSION: "310"
-    - tag: 15.0-311
-      containerfile: Containerfile.pkg
+        FREEBSD_RELEASE: "15.1"
+        PYVER: "310"
+    - tag: 15.1-311
+      containerfile: Containerfile
       args:
-        FREEBSD_RELEASE: "15.0"
-        PYTHON_VERSION: "311"
-    - tag: 15.0-312
-      containerfile: Containerfile.pkg
+        FREEBSD_RELEASE: "15.1"
+        PYVER: "311"
+    - tag: 15.1-312
+      containerfile: Containerfile
       args:
-        FREEBSD_RELEASE: "15.0"
-        PYTHON_VERSION: "312"
-    - tag: 15.0-313
-      containerfile: Containerfile.pkg
+        FREEBSD_RELEASE: "15.1"
+        PYVER: "312"
+    - tag: 15.1-313
+      containerfile: Containerfile
       args:
-        FREEBSD_RELEASE: "15.0"
-        PYTHON_VERSION: "313"
-    - tag: 15.0-313t
-      containerfile: Containerfile.pkg
+        FREEBSD_RELEASE: "15.1"
+        PYVER: "313"
+    - tag: 15.1-313t
+      containerfile: Containerfile
       args:
-        FREEBSD_RELEASE: "15.0"
-        PYTHON_VERSION: "313t"
-    - tag: 15.0-314
-      containerfile: Containerfile.pkg
+        FREEBSD_RELEASE: "15.1"
+        PYVER: "313t"
+    - tag: 15.1-314
+      containerfile: Containerfile
       args:
-        FREEBSD_RELEASE: "15.0"
-        PYTHON_VERSION: "314"
+        FREEBSD_RELEASE: "15.1"
+        PYVER: "314"
+    - tag: 15.1-314t
+      containerfile: Containerfile
+      args:
+        FREEBSD_RELEASE: "15.1"
+        PYVER: "314t"
+    - tag: 15.1-315
+      containerfile: Containerfile
+      args:
+        FREEBSD_RELEASE: "15.1"
+        PYVER: "315"
