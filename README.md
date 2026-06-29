@@ -8,10 +8,91 @@ wikipedia.org/wiki/Python_(programming_language)
 
 ## How to use this Makejail
 
+### Create a `Containerfile` in your Python app project
+
+```dockerfile
+FROM ghcr.io/appjail-makejails/python:15.1-3
+
+WORKDIR /app
+
+COPY requirements.txt ./
+RUN python3 -m ensurepip && \
+    python3 -m pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+CMD [ "python3", "./your-daemon-or-script.py" ]
+```
+
+or (if you need to use Python 2):
+
+```dockerfile
+FROM ghcr.io/appjail-makejails/python:15.1-2
+
+WORKDIR /app
+
+COPY requirements.txt ./
+RUN python2 -m ensurepip && \
+    python2 -m pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+CMD [ "python2", "./your-daemon-or-script.py" ]
+```
+
+You can then build and run the OCI image:
+
 ```console
-# appjail makejail -j python -f gh+AppJail-makejails/python -o container="args:--pull"
+$ buildah build --network=host -t my-python-app .
+$ appjail oci run \
+    -o overwrite=force \
+    -o ephemeral \
+    -o alias \
+    -o ip4_inherit \
+    localhost/my-python-app my-python-app
+```
+
+### Run a single Python script
+
+For many simple, single file projects, you may find it inconvenient to write a complete Containerfile. In such cases, you can run a Python script by using the Python Docker image directly:
+
+```console
+$ appjail oci run \
+    -o overwrite=force \
+    -o ephemeral \
+    -o alias \
+    -o ip4_inherit \
+    -o fstab="$PWD /myapp" \
+    -w /myapp \
+    ghcr.io/appjail-makejails/python:15.1-3 my-python-app \
+    python3 your-daemon-or-script.py
+```
+
+or (again, if you need to use Python 2):
+
+```console
+$ appjail oci run \
+    -o overwrite=force \
+    -o ephemeral \
+    -o alias \
+    -o ip4_inherit \
+    -o fstab="$PWD /myapp" \
+    -w /myapp \
+    ghcr.io/appjail-makejails/python:15.1-2 my-python-app \
+    python2 your-daemon-or-script.py
+```
+
+### OCI image and Makejail
+
+This repository includes a small `Makejail` that ultimately uses the OCI image, in case you prefer to use `appjail-makejail(5)`.
+
+```console
+$ appjail makejail \
+    -j python \
+    -f gh+AppJail-makejails/python \
+    -o container="args:--pull"
 ...
-# appjail cmd jexec python python
+$ appjail cmd jexec python python
 Python 3.11.15 (main, Mar  4 2026, 23:52:19) [Clang 19.1.7 (https://github.com/llvm/llvm-project.git llvmorg-19.1.7-0-gcd7080 on freebsd15
 Type "help", "copyright", "credits" or "license" for more information.
 >>>
@@ -93,3 +174,4 @@ build:
 ## Notes
 
 1. The `latest` tag refers to the default version of Python in the FreeBSD ports, not the latest version of Python. 
+2. The ideas present in the Docker image of Python are taken into account for users who are familiar with it.
