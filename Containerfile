@@ -3,6 +3,7 @@ ARG FREEBSD_RELEASE
 FROM ghcr.io/appjail-makejails/base:${FREEBSD_RELEASE}
 
 ARG PYVER
+ARG NO_PKGCLEAN
 
 LABEL org.opencontainers.image.title="Python" \
     org.opencontainers.image.description="Python is an interpreted, interactive, object-oriented, open-source programming language" \
@@ -11,7 +12,12 @@ LABEL org.opencontainers.image.title="Python" \
     org.opencontainers.image.vendor="DtxdF" \
     org.opencontainers.image.authors="Jesús Daniel Colmenares Oviedo <dtxdf@disroot.org>"
 
-RUN pkg update && \
-    pkg install python${PYVER} && \
-    pkg clean -a && \
-    rm -rf /var/cache/pkg/* /var/db/pkg/repos/*
+RUN set -xe; \
+    \
+    pkg update; \
+    pkg install -U python${PYVER}; \
+    \
+    if [ -z "${NO_PKGCLEAN}" ]; then \
+        pkg clean -a; \
+        rm -rf /var/cache/pkg/* /var/db/pkg/repos/*; \
+    fi

@@ -103,6 +103,11 @@ Type "help", "copyright", "credits" or "license" for more information.
 * `python_from` (default: `ghcr.io/appjail-makejails/python`): Location of OCI image. See also [OCI Configuration](#oci-configuration).
 * `python_tag` (default: `latest`): OCI image tag. See also [OCI Configuration](#oci-configuration).
 
+### Environment (OCI image)
+
+* `PGID` (default: `1000`): Equivalent to `PUID` but for the Process Group ID.
+* `PUID` (default: `1000`): Process User ID for the container's main process, allowing you to match the owner of files written to mounted host volumes to your host system's user. Writable volumes are changed based on this environment variable.
+
 ## OCI Configuration
 
 ```yaml
@@ -114,61 +119,85 @@ build:
       default: true
       args:
         FREEBSD_RELEASE: "15.1"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-3
       containerfile: Containerfile
       args:
         FREEBSD_RELEASE: "15.1"
         PYVER: "3"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-2
       containerfile: Containerfile
       args:
         FREEBSD_RELEASE: "15.1"
         PYVER: "2"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-27
       containerfile: Containerfile
       args:
         FREEBSD_RELEASE: "15.1"
         PYVER: "27"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-310
       containerfile: Containerfile
       args:
         FREEBSD_RELEASE: "15.1"
         PYVER: "310"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-311
       containerfile: Containerfile
       args:
         FREEBSD_RELEASE: "15.1"
         PYVER: "311"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-312
       containerfile: Containerfile
       args:
         FREEBSD_RELEASE: "15.1"
         PYVER: "312"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-313
       containerfile: Containerfile
       args:
         FREEBSD_RELEASE: "15.1"
         PYVER: "313"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-313t
       containerfile: Containerfile
       args:
         FREEBSD_RELEASE: "15.1"
         PYVER: "313t"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-314
       containerfile: Containerfile
       args:
         FREEBSD_RELEASE: "15.1"
         PYVER: "314"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-314t
       containerfile: Containerfile
       args:
         FREEBSD_RELEASE: "15.1"
         PYVER: "314t"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-315
       containerfile: Containerfile
       args:
         FREEBSD_RELEASE: "15.1"
         PYVER: "315"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
 ```
 
 ## Notes
