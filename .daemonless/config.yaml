@@ -2,8 +2,6 @@ build:
   variants:
     - tag: 15.1
       containerfile: Containerfile
-      aliases: ["latest"]
-      default: true
       args:
         FREEBSD_RELEASE: "15.1"
         NO_PKGCLEAN: "1"
@@ -80,6 +78,8 @@ build:
       cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-315
       containerfile: Containerfile
+      aliases: ["latest"]
+      default: true
       args:
         FREEBSD_RELEASE: "15.1"
         PYVER: "315"

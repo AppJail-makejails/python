@@ -115,8 +115,6 @@ build:
   variants:
     - tag: 15.1
       containerfile: Containerfile
-      aliases: ["latest"]
-      default: true
       args:
         FREEBSD_RELEASE: "15.1"
         NO_PKGCLEAN: "1"
@@ -193,6 +191,8 @@ build:
       cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-315
       containerfile: Containerfile
+      aliases: ["latest"]
+      default: true
       args:
         FREEBSD_RELEASE: "15.1"
         PYVER: "315"
@@ -202,5 +202,4 @@ build:
 
 ## Notes
 
-1. The `latest` tag refers to the default version of Python in the FreeBSD ports, not the latest version of Python. 
-2. The ideas present in the Docker image of Python are taken into account for users who are familiar with it.
+1. The ideas present in the Docker image of Python are taken into account for users who are familiar with it.
