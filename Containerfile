@@ -15,7 +15,7 @@ LABEL org.opencontainers.image.title="Python" \
 RUN set -xe; \
     \
     pkg update; \
-    pkg install -U python${PYVER}; \
+    pkg install python${PYVER}; \
     \
     if [ -z "${NO_PKGCLEAN}" ]; then \
         pkg clean -a; \
