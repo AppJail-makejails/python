@@ -107,6 +107,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 * `PGID` (default: `1000`): Equivalent to `PUID` but for the Process Group ID.
 * `PUID` (default: `1000`): Process User ID for the container's main process, allowing you to match the owner of files written to mounted host volumes to your host system's user. Writable volumes are changed based on this environment variable.
+* `UMASK` (default: `0022`): Override default umask setting.
 
 ## OCI Configuration
 
@@ -138,13 +139,6 @@ build:
       args:
         FREEBSD_RELEASE: "15.1"
         PYVER: "27"
-        NO_PKGCLEAN: "1"
-      cache_dirs: ["pkgcache0:/var/cache/pkg"]
-    - tag: 15.1-310
-      containerfile: Containerfile
-      args:
-        FREEBSD_RELEASE: "15.1"
-        PYVER: "310"
         NO_PKGCLEAN: "1"
       cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-311
@@ -180,6 +174,13 @@ build:
       args:
         FREEBSD_RELEASE: "15.1"
         PYVER: "314"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
+    - tag: 15.1-315
+      containerfile: Containerfile
+      args:
+        FREEBSD_RELEASE: "15.1"
+        PYVER: "315"
         NO_PKGCLEAN: "1"
       cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-314t

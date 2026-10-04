@@ -27,13 +27,6 @@ build:
         PYVER: "27"
         NO_PKGCLEAN: "1"
       cache_dirs: ["pkgcache0:/var/cache/pkg"]
-    - tag: 15.1-310
-      containerfile: Containerfile
-      args:
-        FREEBSD_RELEASE: "15.1"
-        PYVER: "310"
-        NO_PKGCLEAN: "1"
-      cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-311
       containerfile: Containerfile
       args:
@@ -67,6 +60,13 @@ build:
       args:
         FREEBSD_RELEASE: "15.1"
         PYVER: "314"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
+    - tag: 15.1-315
+      containerfile: Containerfile
+      args:
+        FREEBSD_RELEASE: "15.1"
+        PYVER: "315"
         NO_PKGCLEAN: "1"
       cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-314t
